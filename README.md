@@ -65,7 +65,7 @@ Keys go in `.env` or your environment. **Never commit them.** `.env` is gitignor
 
 The easiest way to use this is the shareable Grok Bot template. It wraps the whole pipeline in a chat interface: you ask for a disease, and it runs the stages and reports back. Keys are entered through a masked secret window in the chat — they are never pasted into a message, a file, or this repo.
 
-TEMPLATE_LINK_HERE
+(https://x.ai/bot/qg44SjIxB-h0bBP9Jj0f2)
 
 ## Limitations, honestly
 
