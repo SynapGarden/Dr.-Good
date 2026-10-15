@@ -98,14 +98,14 @@ Per-endpoint units are documented in [docs/ADMET_LEGEND.md](docs/ADMET_LEGEND.md
 
 ## How it was trained
 
-Continued fine-tuning from the preceding checkpoint at a learning rate of 1e-6, on a single local NVIDIA GPU. The validation error by this point is nearly flat — the improvement from the previous checkpoint was 0.00045 — so further training at this rate is unlikely to help.
+Continued fine-tuning from the preceding checkpoint at a learning rate of 1e-6, on a single local NVIDIA GPU. Validation error improved at every checkpoint along the way: 0.4063, then 0.40513, then 0.39683, then 0.39627. Training ended because the session was stopped, not because the model had converged.
 
 Inference settings must match training: features `rdkit_2d_normalized_cuik_molmaker`, with `--use_cuikmolmaker_featurization` and `--no_features_scaling`.
 
 
 ### A note on how little compute went into this
 
-This checkpoint is **undertrained, deliberately and honestly.** It was fine-tuned over roughly a day or two on a single consumer GPU (an NVIDIA RTX 4070 Ti Super) in short local sessions, not on a cluster. The validation error had flattened at a learning rate of 1e-6 by the final epoch, which means this particular schedule had stopped paying off — it does not mean the model has reached the limit of what the data supports.
+This checkpoint is **undertrained, and we are saying so plainly.** It was fine-tuned over roughly a day or two on a single consumer GPU (an NVIDIA RTX 4070 Ti Super), in short local sessions rather than on a cluster. It was still improving when we stopped it — every checkpoint beat the one before it. We ran out of time and hardware, not out of headroom.
 
 **If you have real compute, this is the obvious place to improve.** A longer run with a better learning-rate schedule, more epochs, and proper hyperparameter search would very likely beat 0.39627, and would especially help the endpoints that currently fail to beat the dataset mean. Treat these weights as a working baseline and a demonstration that the pipeline runs end to end, not as a well-trained model.
 

@@ -77,7 +77,7 @@ The easiest way to use this is the shareable Grok Bot template. It wraps the who
 
 - **Stage D needs a local NVIDIA GPU.** Most users cannot run it.
 - **No CSF or blood-brain penetration is modelled.** For central nervous system diseases this is the property that matters most, and the pipeline is silent on it.
-- **The model is undertrained.** The shipped checkpoint was fine-tuned for about a day or two on a single consumer GPU (RTX 4070 Ti Super). It is a working baseline, not a well-trained model — with real compute and a proper learning-rate schedule it should go meaningfully further. See [MODEL_CARD.md](MODEL_CARD.md).
+- **The model is undertrained.** The shipped checkpoint was fine-tuned for about a day or two on a single consumer GPU (RTX 4070 Ti Super), and was still improving when we stopped it. It is a working baseline, not a well-trained model — with real compute it should go meaningfully further. See [MODEL_CARD.md](MODEL_CARD.md).
 - **Two model endpoints are unreliable.** CYP2C8 inhibition and total clearance in monkey perform *worse* than simply guessing the dataset average. Do not use them. Details in [MODEL_CARD.md](MODEL_CARD.md).
 - **Several endpoints rest on tiny validation sets** — monkey plasma protein binding has three molecules. Their error estimates mean very little.
 - **Docking and binding scores are not clinical evidence.** In the LMD worked example, one drug scored well on every model and had a posted 0% response rate in its leptomeningeal cohort. That contrast is kept in the report on purpose.
