@@ -1,5 +1,7 @@
 # Model card — Dr. Good KERMT multitask ADMET model (checkpoint v11)
 
+This is the molecular-property model used by **[Dr. Good](https://github.com/SynapGarden/Dr.-Good)**, a disease-agnostic clinical evidence pipeline. In that pipeline the trial evidence is the primary output and this model is the validation layer — it exists to show the apparatus behaves sensibly on chemistry we already understand, not to discover drugs. It is published on its own in case the weights are useful to someone else.
+
 ## What this model does
 
 Given a molecule's structure (as a SMILES string), it predicts 25 properties describing how that molecule is likely to behave in a body: how fast it is cleared, how much of it is free in blood plasma, whether it blocks certain liver enzymes, how soluble it is, and whether it interacts with the hERG cardiac ion channel. These are collectively called **ADMET** properties — absorption, distribution, metabolism, excretion and toxicity.
@@ -88,6 +90,11 @@ Per-endpoint units are documented in [docs/ADMET_LEGEND.md](docs/ADMET_LEGEND.md
 - **Log base is not established in the source.** The dataset writes `log(...)` without specifying base 10 or natural log. The legend marks it as unestablished rather than guessing.
 - **The `CL_microsome_*` unit is doubtful.** It is stated as `log(mL/min/kg)`, but label means of 4.41 to 4.74 do not sit plausibly in that unit. This should be resolved against the source publication before anyone relies on the absolute scale. Relative comparisons between molecules are unaffected.
 - **Direction is not stated for any endpoint.** Neither the dataset nor the KERMT repo says whether higher or lower is better. The legend notes the usual field convention where one exists, clearly labelled as convention rather than source.
+
+## Files
+
+- `model.pt` — v11 checkpoint, epoch 31. SHA-256 `98C57DAA10BCF39C79017FAEF1C74AB362B724A0FCE1E0FE449130862AAE76B9`, 203,288,014 bytes.
+- Code and pipeline: [github.com/SynapGarden/Dr.-Good](https://github.com/SynapGarden/Dr.-Good)
 
 ## How it was trained
 
