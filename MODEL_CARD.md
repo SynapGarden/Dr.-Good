@@ -95,6 +95,13 @@ Continued fine-tuning from the preceding checkpoint at a learning rate of 1e-6, 
 
 Inference settings must match training: features `rdkit_2d_normalized_cuik_molmaker`, with `--use_cuikmolmaker_featurization` and `--no_features_scaling`.
 
+
+### A note on how little compute went into this
+
+This checkpoint is **undertrained, deliberately and honestly.** It was fine-tuned over roughly a day or two on a single consumer GPU (an NVIDIA RTX 4070 Ti Super) in short local sessions, not on a cluster. The validation error had flattened at a learning rate of 1e-6 by the final epoch, which means this particular schedule had stopped paying off — it does not mean the model has reached the limit of what the data supports.
+
+**If you have real compute, this is the obvious place to improve.** A longer run with a better learning-rate schedule, more epochs, and proper hyperparameter search would very likely beat 0.39627, and would especially help the endpoints that currently fail to beat the dataset mean. Treat these weights as a working baseline and a demonstration that the pipeline runs end to end, not as a well-trained model.
+
 ## License
 
 The weights are released for **non-commercial research use.**
