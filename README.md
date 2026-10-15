@@ -1,8 +1,14 @@
 # Dr. Good — a disease-agnostic clinical evidence pipeline
 
-**Dr. Good** turns a disease name into a grounded, citable evidence package: it pulls every registered clinical trial for that indication from ClinicalTrials.gov, deep-reads the ones with posted results, identifies the molecular targets those trials actually named, and then runs a molecular-modelling layer over the drugs involved to check that the pipeline behaves sensibly on chemistry we already understand. The indication is always an input parameter, never hardcoded. The run included here as a **worked example** covers *leptomeningeal disease* (LMD) and is dated 2026-10-15 — it is a demonstration of the pipeline, not the product.
+Most of what we know about treating a disease is already written down. It sits in trial registries, in drug labels, in crystal structures — scattered across thousands of records that nobody has time to read together. Dr. Good reads them together.
 
-The **trial curation is the primary output.** The molecular modelling exists to validate that the pipeline is wired up correctly and produces plausible results on known drugs. It is not a drug discovery engine.
+Give it a disease. It finds every clinical trial ever registered for that indication, pulls out the small fraction that actually posted results, and reads those closely: what was compared against what, how many people enrolled, what the trial set out to measure and what it found. From the drugs in those trials it works out the real molecular targets, named from the labels rather than guessed, and goes looking for experimental structures of those proteins. Then it runs a molecular-modelling layer over the drugs involved — generating close chemical relatives, docking them, scoring how well they bind — not to discover a new drug, but to check that the whole apparatus behaves sensibly on chemistry we already understand.
+
+What comes out is one report where every number is traceable to a record that was opened. Where a record is silent, the report says so instead of filling the gap.
+
+The disease is a parameter. It is never baked into the code. The run included here as a **worked example** covers *leptomeningeal disease*, a cancer that spreads into the lining of the brain and spinal cord, and is dated 2026-10-15 — it demonstrates the pipeline, it is not the product.
+
+The **trial curation is the primary output.** The molecular modelling is a validation layer, there to show the pipeline is wired up correctly. This is not a drug discovery engine.
 
 ## What this is not
 
@@ -65,7 +71,7 @@ Keys go in `.env` or your environment. **Never commit them.** `.env` is gitignor
 
 The easiest way to use this is the shareable Grok Bot template. It wraps the whole pipeline in a chat interface: you ask for a disease, and it runs the stages and reports back. Keys are entered through a masked secret window in the chat — they are never pasted into a message, a file, or this repo.
 
-TEMPLATE_LINK_HERE
+**[Open the Dr. Good template](https://x.ai/bot/qg44SjIxB-h0bBP9Jj0f2)**
 
 ## Limitations, honestly
 
