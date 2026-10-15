@@ -108,3 +108,7 @@ Code in this repository is Apache 2.0. Full breakdown in [LICENSES.md](LICENSES.
 ## Acknowledgements
 
 KERMT and its fine-tuning code are from NVIDIA Digital Biology, building on chemprop and cuik-molmaker. The dataset is the work of the Figshare authors cited above and the dozen upstream groups whose measurements it aggregates. See the [README acknowledgements](README.md#acknowledgements) for the full list.
+
+---
+
+*In honor of Cynthia Miller* 🩷💙
