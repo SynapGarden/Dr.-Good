@@ -1,0 +1,56 @@
+{
+  "indication_slug": "leptomeningeal",
+  "search_terms": [
+    "leptomeningeal",
+    "neoplastic meningitis"
+  ],
+  "query_field": "query.cond",
+  "filter_overallStatus": null,
+  "aggFilters": null,
+  "api_base": "https://clinicaltrials.gov/api/v2/studies",
+  "retrieved_utc": "2026-10-15T11:29:22.825762+00:00",
+  "unique_studies": 219,
+  "studies_with_posted_results": 19,
+  "per_term": [
+    {
+      "term": "leptomeningeal",
+      "query_field": "query.cond",
+      "pages": 1,
+      "new_unique_studies": 196
+    },
+    {
+      "term": "neoplastic meningitis",
+      "query_field": "query.cond",
+      "pages": 1,
+      "new_unique_studies": 23
+    }
+  ],
+  "csv": "trials_leptomeningeal_2026-10-15.csv",
+  "csv_sha256": "9f73b77f66682f36d40dd94324a35797ddb45578ecf5a6e53efde41ee12d1f54",
+  "status_counts": {
+    "COMPLETED": 63,
+    "UNKNOWN": 28,
+    "TERMINATED": 22,
+    "WITHDRAWN": 8,
+    "ACTIVE_NOT_RECRUITING": 22,
+    "RECRUITING": 55,
+    "NO_LONGER_AVAILABLE": 2,
+    "NOT_YET_RECRUITING": 18,
+    "ENROLLING_BY_INVITATION": 1
+  },
+  "phase_counts": {
+    "PHASE1": 56,
+    "PHASE1|PHASE2": 22,
+    "PHASE2": 66,
+    "PHASE4": 8,
+    "EARLY_PHASE1": 5,
+    "NA": 29,
+    "": 29,
+    "PHASE3": 3,
+    "PHASE2|PHASE3": 1
+  },
+  "tool_versions": {
+    "python": "3.13.5",
+    "requests": "2.34.2"
+  }
+}
